@@ -10,42 +10,45 @@ const adicionar = document.getElementById('adicionar')
 
 // Essa função abaixo não precisa reescrever html, é mais seguro
 
-const adicionarCard = (nome, nota) => {
+const adicionarCard = (aluno) => {
 
     const container = document.getElementById('container')
     var novaDiv = document.createElement('div')
 
-    if (nota == '' || nome == '') {
+    if (aluno.nota == '' || aluno.nome == '') {
         alert('Entradas vazias!')
-    } else if (isNaN(nota)) {
+    } else if (isNaN(aluno.nota)) {
         alert('Digite números!')
-    } else if (nota > 10 || nota < 0) {
+    } else if (aluno.nota > 10 || aluno.nota < 0) {
         alert('Notas de 0 a 10!')
-    } else if (nota == null || nome == null) {
+    } else if (aluno.nota == null || aluno.nome == null) {
         alert('Está nulo!!')
-    } else if ( /[0-9]/.test(nome)) {
+    } else if (/[0-9]/.test(aluno.nome)) {
         alert('Nome deve ser contido de apenas letras')
-    }else if(!isNaN(nome)){
+    } else if (!isNaN(aluno.nome)) {
         alert('Nome deve ser contido de apenas letras')
     }
 
     else {
-        if (nota >= 5) {
+        if (aluno.nota >= 5) {
             novaDiv.classList.toggle('notaAzul')
         } else {
             novaDiv.classList.add('notaVermelha')
         }
-        novaDiv.innerHTML = `<h2 class = "aluno_aluno">${nome}</h2>
-                         <span class = "aluno_nota">${nota}</span>`
+        novaDiv.innerHTML = `<h2 class = "aluno_aluno">${aluno.nome}</h2>
+                         <span class = "aluno_nota">${aluno.nota}</span>`
         container.appendChild(novaDiv)
     }
 }
 
 const handleClick = () => {
-    const nome = prompt('Digite o nome do aluno')
-    const nota = prompt('Digite sua nota')
 
-    adicionarCard(nome, nota)
+    const aluno = {
+        nome: prompt('Digite o nome do aluno'),
+        nota: prompt('Digite sua nota')
+    }
+
+    adicionarCard(aluno)
 }
 
 adicionar.addEventListener('click', handleClick)
