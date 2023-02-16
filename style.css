@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    min-height: 50vh;
+    background-color: black;
+    margin: 16px;
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.aluno{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.aluno_nota{
+    font-size: 120px;
+}
+
+.notaAzul{
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.notaVermelha{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
